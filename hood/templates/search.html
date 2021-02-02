@@ -1,5 +1,6 @@
 {%extends 'base.html'%}
 {% block content %}
+
 <div class="container" style="font-family:'Times New Roman', Times">
   <div class="row">
     <div class="col-md-3"></div>
@@ -12,6 +13,7 @@
           <button class="btn btn-outline-info  btn-sm  d-block mx-auto" >Back Home</button>
         </a>
         {% endif %}
+
       <hr>
         {% if project %}
         {% for userpro in project %}
@@ -22,6 +24,7 @@
             <span style="font-weight: bold;font-size: 18px;">{{userpro.location}}</span>
           </div>
         </div>
+        
         {% endfor %}
         {% endif %}
     </div>
