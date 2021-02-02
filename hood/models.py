@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 class Neighbourhood(models.Model):
+    
     hood_name = models.CharField(max_length=60)
     location = models.CharField(max_length=60)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
