@@ -28,22 +28,21 @@ class Neighbourhood(models.Model):
         return self.location
 
 class Profile(models.Model):
-    profile_image = models.ImageField(default='default.png',upload_to='profile_pic')
+    profile_image = models.ImageField(upload_to='profile_pic', null=True)
     bio = models.CharField(max_length=300)
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     neighbourhoods = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True)
 
+    @classmethod
+    def get_profile(cls):
+        all_profiles = cls.objects.all()
+        return all_profiles
+    def save_profles(self):
+        self.save()
+    def delete_profiles(self):
+        self.delete()
     def __str__(self):
-        return f'{self.user.username} Profile'
-
-    @receiver(post_save, sender=User)
-    def create_user_profile(sender, instance, created, **kwargs):
-        if created:
-            Profile.objects.create(user=instance)
-
-    @receiver(post_save, sender=User)
-    def save_user_profile(sender, instance, **kwargs):
-        instance.profile.save()
+        return str(self.user)
 
 class Business(models.Model):
     business_name = models.CharField(max_length=60)
