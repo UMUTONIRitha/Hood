@@ -46,6 +46,7 @@
             <p><a class="img-thumbnail" href="{%url 'new_post' pk=neighbourhood.id %}" style="text-decoration:none;color:green;">
                     post
                 </a> share information with your neighbour </p>
+                
             {%if posts%}
             {%for post in posts%}
             <p><strong>{{post.user.username}}: </strong> {{post.post}}</p>
