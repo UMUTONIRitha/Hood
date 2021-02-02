@@ -10,6 +10,7 @@
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <div class="card-body">
+
           <form action="/accounts/register/" method="post">
             {% csrf_token %}
             {% bootstrap_form form %}
@@ -18,10 +19,12 @@
             </div>
             <input type="hidden" name="next" value="{{next}}">
           </form>
+
           {% if form.errors %}
           <p> Some Information Might be Incorrect </p>
           {% endif %}
           <p>Have an account?<a id="sign" href="/accounts/login/" style="color: green;"> Login</a></p>
+          
         </div>
       </div>
     </div>
