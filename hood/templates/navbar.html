@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/83d474e45f.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-white bg-khaki static-top"
+    style="background-color:khaki;font-family: 'Trocchi', serif;">
+    <div class="container">
+
+      <div class="home">
+        <span><a class="navbar-brand" href="{%url 'home'%}" style="color: black;">Hood</a></span>
+
+      </div>
+      <span> <a class="nav-link" href="{% url 'addhood' %}" style="color: black;">Add New hood</a></span>
+      <div class="search" style="margin-right:30%">
+        <form action="{% url 'search' %}" class="form-inline my-2 my-lg-0">
+          <input type="text" class="input-sm form-control" name="project_name" placeholder="Search"
+              style="border: 0px; border-bottom: 2px solid black; outline: none; margin-left: 60%;background-color:khaki;">
+          
+      </form>
+      </div>
+
+
+      {% if user.is_authenticated %}
+      <ul class="nav justify-content-end">
+
+        <a class="nav-link" href="{%url 'myprofile'%}"
+          style="font-family: 'Noto Serif JP', serif;color:black;text-transform:capitalize;"><i
+            class="fas fa-user fa-sm"></i>{{user.username}}</a>
+
+        <div class="dropdown" style="margin-top: 4%;">
+          <a class="down" data-toggle="dropdown" style="font-family: 'Noto Serif JP', serif;color:black;"><i
+              class="fa fa-sun-o" style="font-size: 28px;color: black;"></i></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{%url 'home'%}"
+              style="font-family: 'Noto Serif JP', serif;color:black;">home</a>
+            <a class="nav-link" href="{%url 'edit'%}" style="color:black">Add profile</a>
+
+            <a class="dropdown-item" href="/accounts/password/change"
+              style="font-family: 'Noto Serif JP', serif;color:black;">Change Password</a>
+            <a class="dropdown-item" href="/logout" style="font-family: 'Noto Serif JP', serif;color:black;">Logout</a>
+          </div>
+        </div>
+        {% else %}
+
+        <a class="nav-link" href="/accounts/login" style="font-family: 'Noto Serif JP', serif;color:black;">Login</a>
+
+      </ul>
+      {% endif %}
+    </div>
+
+   
+  </nav>
+
+</body>
+
+</html>
