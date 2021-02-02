@@ -4,7 +4,7 @@
 {% load staticfiles%}
 <div class="container">
     <div class="row">
-        <div style="margin-top:20px;" class='col-md-5'>
+        <div style="margin-top:20px;font-family: 'Forum', cursive;" class='col-md-5'>
             <div style="width:100%;" class="w3-container card">
                 <div class="w3-card" style="width:100%;">
                   <header class="w3-container w3-light-grey">
@@ -15,7 +15,7 @@
                   </header>
                   <br>
                   <div class="w3-container">
-                    <img src="{{ neighbourhood.hood_image.url }}" alt="image" style="width:100%">
+                    <img src="{{ neighbourhood.hood_image.url }}" alt="image" class="img-responsive" style="width:100%;height:250px;">
                     <p class='article-content'>Location: {{ neighbourhood.location }}</p>
                     <p>Description: {{ neighbourhood.description }}</p>
                   </div>
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div style="background-color:#E5E7E9; margin-top:20px; margin-right:2px; margin-left:2px;" class="col-md-3">
+        <div style="background-color:gainsboro; margin-top:20px; margin-right:2px; margin-left:2px;font-family: 'Forum', cursive;" class="col-md-3">
           <br>
             <p>click <a class="img-thumbnail" href="{%url 'new_business' pk=neighbourhood.id %}" style="text-decoration:none;color:green;">here</a> to add your business</p>
             {%if businesses%}
@@ -41,18 +41,18 @@
             <p><b>no business at the moment</b></p>
             {%endif%}
         </div>
-        <div style="background-color:#E5E7E9; margin-top:20px; margin-right:2px; margin-left:2px;" class="col-md-3">
+        <div style="background-color:gainsboro; margin-top:20px; margin-right:2px; margin-left:2px;font-family: 'Forum', cursive;" class="col-md-3">
           <br>
             <p><a class="img-thumbnail" href="{%url 'new_post' pk=neighbourhood.id %}" style="text-decoration:none;color:green;">
                     post
                 </a> share information with your neighbour </p>
-                
+
             {%if posts%}
             {%for post in posts%}
             <p><strong>{{post.user.username}}: </strong> {{post.post}}</p>
             {%endfor%}
             {%else%}
-            <p><b>no post by {{user.username}} at the moment</b></p>
+            <p><b>no post at the moment</b></p>
             {%endif%}
             <br>
             <hr>
