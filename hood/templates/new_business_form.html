@@ -10,6 +10,7 @@
 {% block styles %} {% bootstrap_css %}
   <link rel="stylesheet" href="#"> {% endblock %}
 </head>
+
 <body style="background-color: gainsboro;">
   <h1 style="text-align: center;margin-top:40px;">Add business in neighborhood</h1>
 <div class="row">
@@ -21,6 +22,7 @@
         <div class="card-body">
        
   <form  action="{%url 'new_business' neighborhood.id %}" method="post" enctype="multipart/form-data">
+
     {%csrf_token%}
     {% bootstrap_form form%}
     <input type="submit" class="btn btn-outline-success btn-lg" value="Post">
