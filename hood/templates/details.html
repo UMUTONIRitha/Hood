@@ -28,32 +28,32 @@
                 </div>
             </div>
         </div>
-        <div style="background-color:gainsboro; margin-top:20px; margin-right:2px; margin-left:2px;font-family: 'Forum', cursive;" class="col-md-3">
+        <div style=" margin-top:20px; margin-right:2px; margin-left:2px;font-family: 'Forum', cursive;" class="col-md-3">
           <br>
-            <p>click <a class="img-thumbnail" href="{%url 'new_business' pk=neighbourhood.id %}" style="text-decoration:none;color:green;">here</a> to add your business</p>
+            <p style="font-family: 'Forum', cursive;">click <a class="img-thumbnail" href="{%url 'new_business' pk=neighbourhood.id %}" style="text-decoration:none;color:green;">here</a> to add your business</p>
             {%if businesses%}
             {%for business in businesses%}
-            <p><b>name:</b> {{business.business_name}}</p>
-            <p><b>description:</b> {{business.description}}</p>
-            <p><b>contact:</b> {{business.email}}</p>
+            <p style="font-family: 'Forum', cursive;"><b>name:</b> {{business.business_name}}</p>
+            <p style="font-family: 'Forum', cursive;"><b>description:</b> {{business.description}}</p>
+            <p style="font-family: 'Forum', cursive;"><b>contact:</b> {{business.email}}</p>
             <hr>
             {%endfor%}
             {%else%}
-            <p><b>no business at the moment</b></p>
+            <p style="font-family: 'Forum', cursive;"><b>no business at the moment</b></p>
             {%endif%}
         </div>
-        <div style="background-color:gainsboro; margin-top:20px; margin-right:2px; margin-left:2px;font-family: 'Forum', cursive;" class="col-md-3">
+        <div style=" margin-top:20px; margin-right:2px; margin-left:2px;font-family: 'Forum', cursive;" class="col-md-3">
           <br>
-            <p><a class="img-thumbnail" href="{%url 'new_post' pk=neighbourhood.id %}" style="text-decoration:none;color:green;">
+            <p><a class="img-thumbnail" href="{%url 'new_post' pk=neighbourhood.id %}" style="text-decoration:none;color:green;font-family: 'Forum', cursive;">
                     post
                 </a> share information with your neighbour </p>
 
             {%if posts%}
             {%for post in posts%}
-            <p><strong>{{post.user.username}}: </strong> {{post.post}}</p>
+            <p style="font-family: 'Forum', cursive;"><strong>{{post.user.username}}: </strong> {{post.post}}</p>
             {%endfor%}
             {%else%}
-            <p><b>no post at the moment</b></p>
+            <p style="font-family: 'Forum', cursive;"><b>no post at the moment</b></p>
             {%endif%}
             <br>
             <hr>
